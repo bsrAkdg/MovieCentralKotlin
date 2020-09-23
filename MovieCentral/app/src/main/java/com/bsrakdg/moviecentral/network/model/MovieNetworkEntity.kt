@@ -1,5 +1,6 @@
 package com.bsrakdg.moviecentral.network.model
 
+import com.bsrakdg.moviecentral.persistence.model.GenreCacheEntity
 import com.google.gson.annotations.Expose
 import com.google.gson.annotations.SerializedName
 
@@ -35,5 +36,9 @@ class MovieNetworkEntity(
 
     @SerializedName("overview")
     @Expose
-    var overview: String
+    var overview: String,
+
+    @SerializedName("genres")
+    @Expose
+    var genres: List<GenreCacheEntity>
 )
