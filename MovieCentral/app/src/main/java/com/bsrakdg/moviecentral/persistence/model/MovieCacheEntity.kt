@@ -32,5 +32,5 @@ data class MovieCacheEntity(
     var overview: String,
 
     @ColumnInfo(name = "genres")
-    var genres: List<GenreCacheEntity>
+    var genres: List<GenreCacheEntity>?
 )
