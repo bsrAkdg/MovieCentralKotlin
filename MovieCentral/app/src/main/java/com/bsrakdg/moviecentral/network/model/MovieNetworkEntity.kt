@@ -1,6 +1,5 @@
 package com.bsrakdg.moviecentral.network.model
 
-import com.bsrakdg.moviecentral.persistence.model.GenreCacheEntity
 import com.google.gson.annotations.Expose
 import com.google.gson.annotations.SerializedName
 
@@ -40,5 +39,9 @@ class MovieNetworkEntity(
 
     @SerializedName("genres")
     @Expose
-    var genres: List<GenreCacheEntity>
-)
+    var genres: List<GenreNetworkEntity>?
+) {
+    override fun equals(other: Any?): Boolean {
+        return if (other is MovieNetworkEntity) other.id == id && other.title == title else false
+    }
+}
